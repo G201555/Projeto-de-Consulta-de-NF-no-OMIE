@@ -1,4 +1,4 @@
-Consulta de Notas Fiscais - Produtos e Serviços (Omie API)
+# Consulta de Notas Fiscais - Produtos e Serviços (Omie API)
 
 Este projeto é uma aplicação web construída em Python utilizando Flask, que permite consultar Notas Fiscais de Produtos (NFe) e Notas Fiscais de Serviços (NFSe) através da API Omie. Ele oferece uma interface simples e interativa para visualizar informações detalhadas das notas, incluindo links para XML, DANFE e PDF da NFSe.
 
