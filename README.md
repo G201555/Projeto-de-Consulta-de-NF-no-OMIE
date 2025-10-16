@@ -1,67 +1,78 @@
-# Consulta de Notas Fiscais no OMIE
+Consulta de Notas Fiscais - Produtos e Serviços (Omie API)
 
-Este projeto tem como objetivo fornecer uma aplicação para consultar notas fiscais utilizando a API do OMIE, permitindo que empresas e desenvolvedores integrem suas soluções financeiras e contábeis com facilidade.
+Este projeto é uma aplicação web construída em Python utilizando Flask, que permite consultar Notas Fiscais de Produtos (NFe) e Notas Fiscais de Serviços (NFSe) através da API Omie. Ele oferece uma interface simples e interativa para visualizar informações detalhadas das notas, incluindo links para XML, DANFE e PDF da NFSe.
 
 Funcionalidades
 
-Consulta de notas fiscais emitidas e recebidas.
+Consulta de NFe e NFSe pelo número da nota.
 
-Filtragem por data, cliente, produto ou número da NF.
+Exibição de informações detalhadas do emitente, destinatário e valores.
 
-Exportação dos dados para CSV ou Excel.
+Listagem dos itens da NFe, com informações de produto, quantidade, NCM, CFOP e valor.
 
-Integração com sistemas internos de gestão.
+Listagem dos serviços da NFSe, incluindo código do serviço, cidade de prestação, alíquota ISS e valores.
+
+Geração de links diretos para:
+
+XML da NFe
+
+DANFE da NFe
+
+PDF da NFSe
+
+Interface responsiva, amigável e de fácil uso.
+
+Retorno de informações completas em JSON para análise ou integração adicional.
 
 Tecnologias Utilizadas
 
-Linguagem: Python / Node.js / PHP (especificar conforme o projeto)
+Python 3.x
 
-API: OMIE (https://app.omie.com.br/api/v1/
-)
+Flask
 
-Banco de Dados: MySQL / SQLite / PostgreSQL (opcional)
+Requests
 
-Outras: Requests / Axios / Guzzle (dependendo da linguagem)
+HTML, CSS e JavaScript para a interface web
 
-Como Usar
+Estrutura do Projeto
+/projeto-consulta-nf
+│
+├─ app.py              # Aplicação Flask principal
+├─ templates/          # (Opcional) Templates HTML, se usar render_template
+└─ static/             # (Opcional) Arquivos CSS/JS adicionais
 
-Clone este repositório:
+Como Executar
 
-git clone https://github.com/seu-usuario/consulta-nf-omie.git
+Clone o repositório:
+
+git clone https://github.com/SEU_USUARIO/consulta-nf.git
+cd consulta-nf
 
 
 Instale as dependências:
 
-pip install -r requirements.txt  # Python
-npm install                      # Node.js
-composer install                  # PHP
+pip install flask requests
 
 
-Configure suas credenciais do OMIE em config.json ou variáveis de ambiente.
+Configure suas chaves APP_KEY e APP_SECRET da Omie no arquivo app.py.
 
-Execute o script de consulta:
+Execute a aplicação:
 
-python consulta_nf.py   # Python
-node consulta_nf.js     # Node.js
-php consulta_nf.php     # PHP
+python app.py
 
 
-Os resultados serão exibidos no console ou exportados conforme a configuração.
+Abra o navegador e acesse:
 
-Contribuição
+http://127.0.0.1:5000/
 
-Contribuições são bem-vindas! Para contribuir:
+Uso
 
-Fork o projeto.
+Digite o número da NFe ou NFSe no formulário correspondente e clique em "Consultar".
 
-Crie uma branch com a feature ou correção (git checkout -b minha-feature).
+Os detalhes da nota e os links para XML, DANFE ou PDF serão exibidos na mesma página.
 
-Faça commit das alterações (git commit -m 'Minha feature').
+Observações
 
-Envie para sua branch (git push origin minha-feature).
+O projeto utiliza as APIs oficiais da Omie. É necessário possuir uma conta ativa e as credenciais de acesso.
 
-Abra um Pull Request.
-
-Licença
-
-Este projeto está licenciado sob a licença MIT.
+Para NFSe, a aplicação utiliza a API de ListarNFSEs e a API de ObterNFSe para gerar os links de download do PDF e XML.
